@@ -4,4 +4,4 @@ An extremely simple WebExtensions that adds a disabled toolbar button with a lin
 
 ## Install
 
-[![addons.mozilla.org/](https://addons.cdn.mozilla.net/static/img/addons-buttons/AMO-button_2.png)](https://addons.mozilla.org/firefox/addon/divider/?src=external-gh-readme)
+[![addons.mozilla.org/](https://addons.cdn.mozilla.net/static/img/addons-buttons/AMO-button_2.png)](https://addons.mozilla.org/addon/divider/?src=external-gh-readme)
