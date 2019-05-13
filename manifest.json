@@ -1,0 +1,19 @@
+{
+  "manifest_version": 2,
+  "name": "divider",
+  "version": "1.0.1",
+  "description": "For your ――――――――――――――――――――――――― needs.",
+  "permissions": [],
+  "icons": {
+    "64": "icon.png"
+  },
+  "browser_action": {
+    "default_title": "―――――――――――――――――――――――――",
+    "default_icon": {
+      "64": "icon.png"
+    }
+  },
+  "background": {
+    "scripts": [ "background.js" ]
+  }
+}
