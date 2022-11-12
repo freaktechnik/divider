@@ -12,18 +12,15 @@ async function updateDivider(dividerSize = 25, divider = '―', rotate = false) 
     });
 }
 
-browser.browserAction.disable();
-browser.storage.local.get({
-    dividerSize: 25,
-    divider: '―',
-    rotate: false
-})
-    .then(({
-        dividerSize,
-        divider,
-        rotate
-    }) => updateDivider(dividerSize, divider, rotate))
-    .catch(console.error);
+browser.runtime.onStartup(async () => {
+    browser.browserAction.disable();
+    const { dividerSize, divider, rotate } = await browser.storage.local.get({
+        dividerSize: 25,
+        divider: '―',
+        rotate: false
+    });
+    updateDivider(dividerSize, divider, rotate);
+});
 
 browser.storage.onChanged.addListener(async (changes, areaName) => {
     if(areaName === 'local') {
