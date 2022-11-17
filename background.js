@@ -19,7 +19,7 @@ async function init() {
         divider: '―',
         rotate: false
     });
-    updateDivider(dividerSize, divider, rotate);
+    await updateDivider(dividerSize, divider, rotate);
 }
 
 browser.runtime.onStartup.addListener(() => {
@@ -52,6 +52,6 @@ browser.storage.onChanged.addListener(async (changes, areaName) => {
             }
         }
 
-        updateDivider(dividerSize, divider, rotate);
+        await updateDivider(dividerSize, divider, rotate);
     }
 });
