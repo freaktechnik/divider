@@ -1,19 +1,19 @@
 async function updateDivider(dividerSize = 25, divider = '―', rotate = false) {
     const dividerLabel = divider.repeat(dividerSize);
-    browser.browserAction.setTitle({
+    browser.action.setTitle({
         title: dividerLabel
     });
     let image = 'icon.svg';
     if(rotate) {
         image = 'iconr.svg';
     }
-    await browser.browserAction.setIcon({
+    await browser.action.setIcon({
         path: image
     });
 }
 
 async function init() {
-    browser.browserAction.disable();
+    browser.action.disable();
     const { dividerSize, divider, rotate } = await browser.storage.local.get({
         dividerSize: 25,
         divider: '―',
@@ -36,7 +36,7 @@ browser.storage.onChanged.addListener(async (changes, areaName) => {
     if(areaName === 'local') {
         let existingDivider;
         if(!changes.dividerSize || !changes.divider) {
-            existingDivider = await browser.browserAction.getTitle();
+            existingDivider = await browser.action.getTitle();
         }
         const dividerSize = changes.dividerSize ? changes.dividerSize.newValue : existingDivider.length,
             divider = changes.divider ? changes.divider.newValue : existingDivider[0];
