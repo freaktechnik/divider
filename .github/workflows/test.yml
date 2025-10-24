@@ -1,0 +1,8 @@
+name: test
+on: [push, pull_request]
+jobs:
+  lint-webext:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: freaktechnik/web-ext-lint@v1
